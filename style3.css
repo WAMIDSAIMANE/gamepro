@@ -1,0 +1,395 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Stars Animation */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.stars {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle cx="5" cy="5" r="0.5" fill="white" opacity="0.8"/></svg>') repeat;
+  background-size: 100px 100px;
+  animation: stars-move 100s linear infinite;
+}
+
+.stars2 {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle cx="5" cy="5" r="0.7" fill="white" opacity="0.6"/></svg>') repeat;
+  background-size: 200px 200px;
+  animation: stars-move 150s linear infinite;
+}
+
+.stars3 {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><circle cx="5" cy="5" r="1" fill="white" opacity="0.4"/></svg>') repeat;
+  background-size: 300px 300px;
+  animation: stars-move 200s linear infinite;
+}
+
+@keyframes stars-move {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 10000px 5000px;
+  }
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.trophy {
+  margin-right: 8px;
+  font-size: 28px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #e83cff;
+}
+
+.sign-up-btn a {
+  display: inline-block;
+  padding: 10px 25px;
+  border: 2px solid #e83cff;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.sign-up-btn a:hover, .sign-up-btn a.active {
+  background-color: #e83cff;
+  box-shadow: 0 0 15px #e83cff;
+}
+
+/* Main Content */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.left-content {
+  flex: 1;
+  padding-right: 50px;
+}
+
+.right-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #e83cff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+h1 span {
+  font-size: 70px;
+  display: block;
+  color: white;
+  -webkit-text-fill-color: white;
+}
+
+.left-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.play-now {
+  background: linear-gradient(45deg, #e83cff, #8a2be2);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(232, 60, 255, 0.4);
+}
+
+.play-now:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(232, 60, 255, 0.6);
+}
+
+/* Sign Up Form */
+.signup-form {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #e83cff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #e83cff;
+  box-shadow: 0 0 10px rgba(232, 60, 255, 0.5);
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(45deg, #e83cff, #8a2be2);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.signup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(232, 60, 255, 0.4);
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #e83cff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Floating Elements */
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pixel-heart {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 3.22l-.61-.6a5.5 5.5 0 0 0-7.78 7.77L10 18.78l8.39-8.4a5.5 5.5 0 0 0-7.78-7.77l-.61.61z" fill="%23e83cff"/></svg>');
+  background-size: contain;
+  top: 30%;
+  left: 60%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.game-controller {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 7H18A5 5 0 0 1 23 12V16A5 5 0 0 1 18 21H6A5 5 0 0 1 1 16V12A5 5 0 0 1 6 7M6 9A3 3 0 0 0 3 12V16A3 3 0 0 0 6 19H18A3 3 0 0 0 21 16V12A3 3 0 0 0 18 9H6M7 13H9V15H7V13M15 13H17V15H15V13M8 4L10 6H14L16 4H8Z" fill="%238a2be2"/></svg>');
+  background-size: contain;
+  top: 60%;
+  left: 75%;
+  animation: float 10s ease-in-out infinite;
+}
+
+.start-button {
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 50"><rect x="5" y="5" width="90" height="40" rx="10" fill="%23302b63" stroke="%23e83cff" stroke-width="2"/><text x="50" y="30" font-family="Arial" font-size="16" fill="white" text-anchor="middle">START</text></svg>');
+  background-size: contain;
+  top: 40%;
+  left: 80%;
+  animation: float 12s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0) rotate(0deg);
+  }
+  50% {
+      transform: translateY(-20px) rotate(5deg);
+  }
+  100% {
+      transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+      flex-direction: column;
+      padding: 30px;
+  }
+  
+  .left-content {
+      padding-right: 0;
+      margin-bottom: 50px;
+      text-align: center;
+  }
+  
+  h1 {
+      font-size: 50px;
+  }
+  
+  h1 span {
+      font-size: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+      padding: 15px 20px;
+      flex-wrap: wrap;
+  }
+  
+  nav {
+      order: 3;
+      width: 100%;
+      margin-top: 15px;
+  }
+  
+  nav ul {
+      justify-content: center;
+  }
+  
+  nav ul li {
+      margin: 0 10px;
+  }
+  
+  h1 {
+      font-size: 40px;
+  }
+  
+  h1 span {
+      font-size: 50px;
+  }
+  
+  .signup-form {
+      padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul li {
+      margin: 0 5px;
+  }
+  
+  nav ul li a {
+      font-size: 14px;
+  }
+  
+  h1 {
+      font-size: 32px;
+  }
+  
+  h1 span {
+      font-size: 40px;
+  }
+  
+  .left-content p {
+      font-size: 14px;
+  }
+  
+  .signup-form {
+      padding: 20px;
+  }
+}
